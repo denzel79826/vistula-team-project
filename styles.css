@@ -48,6 +48,15 @@ h1 {
   color: #fff;
 }
 
+a#contribution-link {
+    color: #4338ca;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border: 1px solid #4338ca;
+    border-radius: 4px;
+}
+
 #student-id{
   background: #4338ca;
   color: #fff;
