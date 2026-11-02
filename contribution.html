@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Contribution</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 20px 24px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        header h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .header-label {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+
+        /* Navigation */
+        .back-link {
+            display: inline-block;
+            color: #0d6efd;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 7px 12px;
+            border: 1px solid #0d6efd;
+            border-radius: 4px;
+        }
+
+        .back-link:hover {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        /* Main Content */
+        .contribution-section {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 20px;
+        }
+
+        .intro-panel {
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 6px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 250px;
+        }
+
+        .intro-panel h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .intro-panel p {
+            font-size: 0.9rem;
+            color: #e7f1ff;
+        }
+
+        .panel-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #e7f1ff;
+            margin-bottom: 18px;
+        }
+
+        .info-panel {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 25px;
+        }
+
+        .info-panel h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Contributor Information */
+        .info-label {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-bottom: 6px;
+        }
+
+        .student-id-box {
+            background-color: #e7f1ff;
+            border: 1px solid #cfe2ff;
+            border-radius: 4px;
+            padding: 14px;
+            margin-bottom: 20px;
+        }
+
+        #contributor-student-id {
+            color: #0d6efd;
+            font-weight: 600;
+            font-size: 1rem;
+            overflow-wrap: anywhere;
+        }
+
+        /* Button */
+        #load-contributor {
+            background-color: #0d6efd;
+            color: white;
+            border: 1px solid #0d6efd;
+            border-radius: 4px;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.15s ease-in-out;
+        }
+
+        #load-contributor:hover {
+            background-color: #0b5ed7;
+        }
+
+        #load-contributor:disabled {
+            opacity: 0.65;
+            cursor: wait;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.8rem;
+            margin-top: 25px;
+            padding: 15px;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 650px) {
+            .contribution-section {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-panel {
+                min-height: 180px;
+            }
+
+            header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <div>
+                <h1>Team Contribution</h1>
+                <p class="header-label">Contributor information and project details</p>
+            </div>
+
+            <a href="index.html" class="back-link">
+                &larr; Task Manager
+            </a>
+        </header>
+
+        <main class="contribution-section">
+
+            <section class="intro-panel">
+                <div>
+                    <p class="panel-tag">Project Information</p>
+                    <h2>Team Contributions</h2>
+                    <p>
+                        This page provides information about the
+                        student contributing to the Task Manager project.
+                    </p>
+                </div>
+
+                <p class="header-label">
+                    Vistula Task Manager
+                </p>
+            </section>
+
+            <section class="info-panel">
+                <h2>Contributor Details</h2>
+
+                <p class="info-label">Student Identification Number</p>
+
+                <div class="student-id-box">
+                    <p id="contributor-student-id">
+                        Not loaded yet
+                    </p>
+                </div>
+
+                <button id="load-contributor">
+                    Show Contributor
+                </button>
+            </section>
+
+        </main>
+
+        <footer>
+            Vistula Task Manager &copy; 2026
+        </footer>
+
+    </div>
+
+    <script>
+        const button = document.getElementById("load-contributor");
+        const contributorElement = document.getElementById("contributor-student-id");
+
+        button.addEventListener("click", async function () {
+
+            button.disabled = true;
+            button.textContent = "Loading...";
+
+            try {
+                const response = await fetch("contribution.json");
+
+                if (!response.ok) {
+                    throw new Error("Unable to retrieve contributor data.");
+                }
+
+                const data = await response.json();
+
+                if (!data.contributorStudentId) {
+                    throw new Error("Student ID was not found in the JSON file.");
+                }
+
+                contributorElement.textContent =
+                    "Contributor Student ID: " + data.contributorStudentId;
+
+                button.textContent = "Contributor Loaded";
+
+            } catch (error) {
+                contributorElement.textContent =
+                    "Unable to load contributor information.";
+
+                button.textContent = "Try Again";
+
+                console.error(error);
+
+            } finally {
+                button.disabled = false;
+            }
+
+        });
+    </script>
+
+</body>
+</html>
