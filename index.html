@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasks</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <div class="title-details">
+        <h1>Tasker</h1>
+        <p id="student-id">ID: 79826</p>
+      </div>
+      <button id="open-form" class="btn btn-primary" type="button">+ New task</button>
+    </header>
+
+    <!-- Tasks are rendered here by script.js -->
+    <ul class="tasks"></ul>
+  </main>
+
+  <!-- Pop-up modal: used for both creating and editing tasks -->
+  <dialog id="task-dialog" class="task-dialog" aria-labelledby="dialog-heading">
+    <form id="task-form">
+      <h2 id="dialog-heading">New task</h2>
+
+      <label class="field" for="task-title">
+        Title
+        <input id="task-title" type="text" placeholder="e.g. Fix login bug" required>
+      </label>
+
+      <label class="field" for="task-description">
+        Description
+        <input id="task-description" type="text" placeholder="Optional details">
+      </label>
+
+      <div class="form-actions">
+        <button id="task-cancel" class="btn" type="button">Cancel</button>
+        <button id="task-submit" class="btn btn-primary" type="submit">Add task</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="confirm-dialog" class="task-dialog" aria-labelledby="confirm-heading">
+  <div class="confirm-body">
+    <h2 id="confirm-heading">Delete task?</h2>
+    <p id="confirm-message"></p>
+    <div class="form-actions">
+      <button id="confirm-cancel" class="btn" type="button">Cancel</button>
+      <button id="confirm-delete" class="btn btn-danger" type="button">Delete</button>
+    </div>
+  </div>
+</dialog>
+
+
+<!-- load js scripts -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js" defer></script>
+
+</body>
+</html>
